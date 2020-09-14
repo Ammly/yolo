@@ -40,8 +40,8 @@ To view container logs
 ## Docker-compose
 
 This file (docker-compose.yml) creates three containers
-    - yolomy_client - contains the yolomy client service which runs on port `3000 `
-    - yolomy_backend - contains yolomy backend service which runs on port ` 5000 `
-    - mongo - contains mongo db which runs on port ` 27017 ` and has an attached volume called ` dbdata `
+- yolomy_client - contains the yolomy client service which runs on port `3000 `
+- yolomy_backend - contains yolomy backend service which runs on port ` 5000 `
+- mongo - contains mongo db which runs on port ` 27017 ` and has an attached volume called ` dbdata `
 
 Networks - All containers are in ` yolomy ` bridge network
