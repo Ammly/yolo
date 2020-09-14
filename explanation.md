@@ -7,7 +7,7 @@
 
 If you need to go inside a container run the following command
     ` docker exec -it <container id> /bin/bash `
-    - Run ` docker ps ` to get the container ID
+- Run ` docker ps ` to get the container ID
 
 To view container logs
     ` docker logs <container id> `
