@@ -36,3 +36,12 @@ To view container logs
 ` EXPOSE 3000 ` - Expose port 3000 for client and 5000 for backend
 
 ` CMD ["node", "server.js"] ` or ` CMD [ "serve", "-s", "build", "-l", "3000" ] ` - Start the server
+
+## Docker-compose
+
+This file (docker-compose.yml) creates three containers
+    - yolomy_client - contains the yolomy client service which runs on port `3000 `
+    - yolomy_backend - contains yolomy backend service which runs on port ` 5000 `
+    - mongo - contains mongo db which runs on port ` 27017 ` and has an attached volume called ` dbdata `
+
+Networks - All containers are in ` yolomy ` bridge network
