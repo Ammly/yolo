@@ -1,32 +1,37 @@
 apiVersion: v1
 kind: Service
 metadata:
-   name: yolomy_backend
-   labels:
-     run: yolomy_backend
+  name: yolomy-backend-service
+  labels:
+    name: yolomy-backend
 spec:
-   ports:
-   – port: 80
-     targetPort: 8888
-     protocol: TCP
-   type: NodePort
-   selector:
-     run: yolomy_backend
+  ports:
+    - port: 80
+      targetPort: 5000
+      protocol: TCP
+  type: NodePort
+  selector:
+    name: yolomy-backend
 
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-   name: yolomy_backend
+  name: yolomy-backend-deployment
+  labels:
+    app: yolomy-backend
 spec:
-   replicas: 2
-   template:
-     metadata:
-       labels:
-         run: yolomy_backend
-   spec:
-     containers:
-     – name: yolomy_backend
-       image: ammlyf/yolo_backend
-       ports:
-       – containerPort: 8888
+  replicas: 2
+  selector:
+    matchLabels:
+      app: yolomy-backend
+  template:
+    metadata:
+      labels:
+        app: yolomy-backend
+    spec:
+      containers:
+        - name: yolomy-backend
+          image: ammlyf/yolo_backend
+          ports:
+            - containerPort: 5000
