@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-   name: yolomy-client
+   name: yolomy_client
    labels:
-     run: yolomy-client
+     run: yolomy_client
 spec:
    ports:
    – port: 80
@@ -11,22 +11,22 @@ spec:
      protocol: TCP
    type: NodePort
    selector:
-     run: yolomy-client
+     run: yolomy_client
 
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-   name: yolomy-client
+   name: yolomy_client
 spec:
    replicas: 2
    template:
      metadata:
        labels:
-         run: yolomy-client
+         run: yolomy_client
    spec:
      containers:
-     – name: yolomy-client
+     – name: yolomy_client
        image: ammlyf/yolo_client
        ports:
        – containerPort: 8888
