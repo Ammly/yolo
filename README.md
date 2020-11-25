@@ -23,7 +23,10 @@ Make sure that you have the following installed:
  ### Go ahead a nd add a product (note that the price field only takes a numeric input)
  
  
- # Deloy to Google Kubernetes Engine (GKE)
+ 
+ # IP 4 Orchestration
+ 
+ ## Deloy to Google Kubernetes Engine (GKE)
  
  1. Login to GCP and create a Kubernetes Cluster on [GKE](https://console.cloud.google.com/kubernetes)
  2. Execute the following commands to deploy yolomy frontend, backend and mongo db
